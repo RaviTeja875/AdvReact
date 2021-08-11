@@ -12,10 +12,15 @@ function Forms() {
 
     const handleSubmit =(e) =>{
         e.preventDefault();//this is used to prevent default behaiviour of our browser
-        console.log("firstName,email")
-    }
-
-    
+        if(firstName && email) {
+            console.log('submit the value');
+            const person ={firstName ,email};
+            console.log(person);
+        }
+       else {
+                    console.log('empty value');
+                }
+            }
     return (
         <>
         <article>
