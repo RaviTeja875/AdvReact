@@ -1,9 +1,13 @@
 import React , {useState} from 'react'
 //use state is a named import so we must  must have the curly braces
 function UseStateBasic() {
-    const [day,setDay]= useState("today is  a rainy day");
+    const [day,setDay]= useState("Today is  a rainy day");
     const handleClick =() => {
-        setDay("Today is a bright and beautiful day!")
+        if(day ==="Today is  a rainy day:("){
+            setDay("Today is a bright and beautiful day!")
+        }
+        else
+        setDay("Today is  a rainy day:(")
     }
 
 return (
