@@ -44,6 +44,19 @@ function Forms() {
 
             <button type="submit">Submit</button>
             </form>
+            
+                {people.map((person, index) => {
+                    const {id, firstName, email} =person;
+                    return(
+                        <div className="item">
+                            <h4>{firstName}</h4>
+                            <p>{email}</p>
+                        </div>
+                    );
+
+                
+                })}
+            
         </article>
         </>
     )
