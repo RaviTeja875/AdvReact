@@ -6,8 +6,12 @@ function UseStateObject() {
         age: 50,
         message: "I am a God",
     });
+    const [name,setName] = useState("Tony Stark")
+    const [age,setAge] = useState(49)
+    const [message,setMessage] = useState(" I am Ironman")
     const changeMessage = () => {
         setPerson({...person, message:"not anymore"});
+        setMessage("hello world");
     }
     return (
         <div>
