@@ -9,13 +9,20 @@ import React, {useState} from 'react'
 function Forms() {
     const [firstName,setFirstName] = useState("");
     const [email, setEmail] = useState("");
+    const [people, setPeople] =useState([]);
 
     const handleSubmit =(e) =>{
         e.preventDefault();//this is used to prevent default behaiviour of our browser
         if(firstName && email) {
             console.log('submit the value');
             const person ={firstName ,email};
-            console.log(person);
+           // console.log(person);
+           setPeople((people) => {
+               return [...people, person];
+
+           });
+           setFirstName('');
+           setEmail('');
         }
        else {
                     console.log('empty value');
