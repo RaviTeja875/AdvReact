@@ -1,13 +1,15 @@
 import React from 'react';
 import Forms from './tutorial/Forms';
-import UseEffectBasics from './tutorial/UseEffectBasics';
+
+import LearnJSON from "./tutorial/LearnJSON";
+
 
 
 function App() {
   return ( <div className='container'>
     
-   
-    <Forms />
+  
+    <LearnJSON/>
   </div>
   );
 }

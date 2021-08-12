@@ -1,64 +1,74 @@
-import React, {useState} from 'react'
-//we want to have two input fields
-//we want to have abutton
-//one of the input field should accept username
+import React,{useState} from 'react'
+//we want to have input field
+//want to have button
+//one of the input should accept username
 //email
-//we want to accept the data and store it somewhere in avariable
-//initial state will be empty
-
+//accept the data and store in some variable
+//initial value empty
 function Forms() {
-    const [firstName,setFirstName] = useState("");
-    const [email, setEmail] = useState("");
-    const [people, setPeople] =useState([]);
-
-    const handleSubmit =(e) =>{
-        e.preventDefault();//this is used to prevent default behaiviour of our browser
-        if(firstName && email) {
-            console.log('submit the value');
-            const person ={firstName ,email};
-           // console.log(person);
-           setPeople((people) => {
-               return [...people, person];
-
-           });
-           setFirstName('');
-           setEmail('');
+    // const [name,setName]=useState('kundan')    // if we will give initial value to name and email it will be printed in texted as it is
+    // const [email,setEmail]=useState('kk@gmail')// 
+    const [name,setName]=useState('')    //
+    const [email,setEmail]=useState('')
+    
+    const [person,setPerson]=useState([])
+    const handleSubmit=(e)=>
+    {
+        e.preventDefault();
+        // var firstname=document.getElementById('firstname').value;   //one way 
+        // var emailaddress=document.getElementById('email').value;
+        
+        if(name && email)
+        {
+            //const people={name:name,email:email}
+            const people={id:new Date().getTime().toString(),name,email}
+            console.log(people);
+            //person.push(people)
+            setPerson(person=>{return [...person,people]})
+            console.log(person);
         }
-       else {
-                    console.log('empty value');
-                }
-            }
+        else{
+            alert('Must Enter Fields')
+        }
+    }
+    const firstName=(event)=>{
+        setName(event.target.value)
+    }
     return (
         <>
-        <article>
-            <form className='form' onSubmit={handleSubmit}>
-            <div className='form-control'>
-                <lable htmlFor="firstName">Name:</lable>
-                <input type="text" id="firstname" name='firstname' value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
-
-            </div>
-            <div className='form-control'>
-                <lable htmlFor="email">Name:</lable>
-                <input type="text" id="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
-             </div>
-
-            <button type="submit">Submit</button>
-            </form>
+           <article>
+               <form className='form' onSubmit={handleSubmit}>
             
-                {people.map((person, index) => {
-                    const {id, firstName, email} =person;
-                    return(
-                        <div className="item">
-                            <h4>{firstName}</h4>
-                            <p>{email}</p>
-                        </div>
-                    );
-
-                
-                })}
-            
-        </article>
+               <div className='form-control'>
+                   <label htmlFor='firstName'>Name:</label>
+                   <input type='text' id='firstname' name='firstname' value={name} onChange={(e)=>setName(e.target.value)}></input> {/*if you assign value you can change the value without onChange*/}
+               </div>
+               <div className='form-control'>
+                   <label htmlFor='email'>Email:</label>
+                   <input type='email' id='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+               </div>
+               <button type='submit'>Submit</button>
+               </form>
+               {
+                   person.map((people,index)=>{
+                   const {id,name,email}=people;
+                   return (
+                       <div className='item' key={id} >
+                           <h4>{name}</h4>
+                           <p>{email}</p>
+                       </div>
+                   );
+                   
+                })
+               }
+               {/* {
+                   person.map((x)=>{return(<div className="item"><h4 >{x.name}</h4><p>{x.email}</p></div>)})  // another way
+               } */}
+               
+               
+           </article>
         </>
     )
 }
-export default  Forms
+
+export default Forms
