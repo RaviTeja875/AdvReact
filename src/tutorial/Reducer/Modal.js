@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Modal() {
+function Modal( {modalContent}) {
     return (
         <>
             <h2>hello</h2>

@@ -2,8 +2,8 @@ import React, { useState, useReducer} from 'react'
 import Modal from "./Modal";
 import { data } from "../data";
 //lets imort reducer
-import { Reducer } from './Reducer';
-const reducer = (state,action) => {
+import { reducer } from './Reducer';
+const Reducer = (state,action) => {
 
 }
 const defaultState = {
@@ -25,14 +25,14 @@ function Index(){
             setName("");
         }
         else{
-            dispatch({type: 'NO_VALUE'});
+            dispatch({type: 'No_VALUE'});
         }
     }
     const closeModal = () => {
         dispatch({type: 'CLOSE_MODAL'});
     }
     return (<>
-    {}
+    
     {state.isModalOpen && (<Modal closeModal={closeModal} modalContent={state.modalContent} />)}
     <form onSubmit={handleSubmit} className='form'>
         <div>
