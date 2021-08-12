@@ -1,7 +1,6 @@
 import React from 'react';
-import Forms from './tutorial/Forms';
+import Index from './tutorial/Reducer';
 
-import LearnJSON from "./tutorial/LearnJSON";
 
 
 
@@ -9,7 +8,7 @@ function App() {
   return ( <div className='container'>
     
   
-    <LearnJSON/>
+    <Index/>
   </div>
   );
 }
