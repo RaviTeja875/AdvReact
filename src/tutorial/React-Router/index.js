@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //require a router which can route our components to there respective links 
 //adn we would require some kind of switch to enable or disable our router
 
+//we can use either very unique path routes or we can  use exact keyword
 function ReactRouterDom() {
     return (
         <Router>
