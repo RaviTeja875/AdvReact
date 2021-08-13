@@ -1,14 +1,11 @@
 import React from 'react';
-import Index from './tutorial/Reducer';
-
-
-
+import ReactRouterDom from './tutorial/React-Router';
 
 function App() {
   return ( <div className='container'>
     
   
-    <Index/>
+    <ReactRouterDom/>
   </div>
   );
 }
