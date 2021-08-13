@@ -14,19 +14,25 @@ import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function ReactRouterDom() {
     return (
         <Router>
-           <Route path="/">
+            <NavBar />
+            <Switch>
+           <Route exact path="/">
                <Home />
            </Route>
-           <Route path="/">
+           <Route path="/about">
                <About />
-           </Route>
-           <Route path="/">
-               <Error />
-           </Route>
-           <Route path="/">
+               </Route>
+           
+           <Route path="/people">
                <People />
            </Route>
+           <Route path="*">
+           <Error />
+           </Route>
+          
+           </Switch>
         </Router>
+        
     )
 }
 
